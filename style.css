@@ -11,6 +11,7 @@
     
     --h1-font-size: clamp(1.6rem, 1.2rem + 1.2vw, 2rem);
     --p-font-size: 0.9375rem;
+    --p-font-size-card: 0.82rem;
     --font-family: 'Poppins', sans-serif;
 }
 
@@ -28,8 +29,8 @@ body{
     justify-content: center;
     font-family: var(--font-family);
     font-size: var(--p-font-size);
-    color: var(--Grey-500);
-    padding-block: 2rem;
+    color: var(--Grey-400);
+    padding-block: 2.4rem;
     min-height: 100vh;
 }
 
@@ -44,11 +45,15 @@ header{
 
 header h1{
     font-size: var(--h1-font-size);
-    font-weight: 400;
+    font-weight: 200;
+}
+
+header h1 strong{
+    font-weight: 600;
 }
 
 header p{
-    max-width: 20rem;
+    max-width: clamp(20rem, 15.38rem + 23.08vw, 36rem);
 }
 
 footer{
@@ -67,7 +72,7 @@ footer a:focus-visible{
 
 .cards{
     display: grid;
-    grid-template-columns: minmax(18rem, 20rem);
+    grid-template-columns: minmax(16rem, 19rem);
     gap: 2rem;
     justify-content: center;
     padding: 2rem;
@@ -81,9 +86,10 @@ footer a:focus-visible{
     width: 100%;
     height: auto;
     padding: 1.8rem;
-    box-shadow: 0 1rem 1.8rem -0.8rem var(--Grey-400);
+    box-shadow: 0 0.8rem 1.6rem -1.2rem var(--Grey-500);
     background-color: var(--White);
     border-radius: 0.5rem;
+    font-size: var(--p-font-size-card);
 }
 
 .cards article img {
@@ -91,7 +97,7 @@ footer a:focus-visible{
     align-self: flex-end;
     width: 4rem;
     height: 4rem;
-    margin-top: 2rem;
+    margin-block: 1.5rem;
 }
 
 .card-supervisor {
@@ -111,17 +117,13 @@ footer a:focus-visible{
 }
 
 @media (min-width: 64rem) {
-    
-    header p{
-        max-width: 36rem;
-    }
 
     footer{
         font-size: var(--p-font-size);
     }
 
     .cards {
-        grid-template-columns: repeat(3, minmax(20rem, 24rem));
+        grid-template-columns: repeat(3, minmax(19rem, 22rem));
         width: 100%;
         align-items: center;
         max-width: 76rem;
